@@ -12,7 +12,7 @@ resource "azurerm_management_lock" "rglock" {
 
 resource "azurerm_network_security_group" "nsg" {
   name                = var.nsg_name
-  location            = var.location
+  location            = var.resource_name
   resource_group_name = var.resource_group_name
   dynamic "security_rule" {
     for_each = var.nsg_rules
